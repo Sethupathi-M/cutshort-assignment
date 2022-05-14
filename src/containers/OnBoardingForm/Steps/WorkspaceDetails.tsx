@@ -4,6 +4,7 @@ import { RiUserFill } from "react-icons/ri";
 import { HiUserGroup } from "react-icons/hi";
 import { useFormContext } from "react-hook-form";
 import FormHeadings from "../../../components/FormHeadings";
+import RadioButton from "../../../components/RadioButton";
 
 interface WorkspaceDetailsProps {
   styles?: React.CSSProperties;
@@ -28,6 +29,15 @@ function WorkspaceDetails({ styles, goToNext }: WorkspaceDetailsProps) {
     setValue("usersType", radioValue);
   }, [setValue, radioValue]);
 
+  const UserTypeCard = ({ icon, title, details }: any) => {
+    return (
+      <>
+        {icon}
+        <h6>{title}</h6>
+        <p className="fs-6 fw-lighter">{details}</p>
+      </>
+    );
+  };
   return (
     <div style={{ ...styles }}>
       <FormHeadings
@@ -37,56 +47,46 @@ function WorkspaceDetails({ styles, goToNext }: WorkspaceDetailsProps) {
       <Form className="form-container">
         <div className="div-center">
           <div className="row mb-3">
-            <ButtonGroup
-              className={`mb-2 col ws-user ${
-                radioValue === "single" && "active"
-              }`}
+            <RadioButton
+              id="userType1"
+              className={`ws-user ${radioValue === "single" && "active"}`}
+              name="userType"
+              value="single"
+              currentValue={radioValue}
+              onRadioButtonChange={async () => setRadioValue("single")}
             >
-              <ToggleButton
-                className="text-start"
-                id={`userType-radio1`}
-                type="radio"
-                name="userType"
-                value={"single"}
-                checked={radioValue === "single"}
-                onChange={(e) => setRadioValue("single")}
-              >
-                <RiUserFill
-                  color={`${radioValue === "single" ? "#664de5" : "black"}`}
-                  size={24}
-                  className="mb-2"
-                />
-                <h6>For myself</h6>
-                <p className="fs-6 fw-lighter">
-                  Write better. Think more clearly. Stay organized.
-                </p>
-              </ToggleButton>
-            </ButtonGroup>
-            <ButtonGroup
-              className={`mb-2 col ws-user ${
-                radioValue === "multi" && "active"
-              }`}
+              <UserTypeCard
+                icon={
+                  <RiUserFill
+                    color={`${radioValue === "single" ? "#664de5" : "black"}`}
+                    size={24}
+                    className="mb-2"
+                  />
+                }
+                title={"For myself"}
+                details={" Write better. Think more clearly. Stay organized."}
+              ></UserTypeCard>
+            </RadioButton>
+            <RadioButton
+              id="userType2"
+              className={`ws-user ${radioValue === "multi" && "active"}`}
+              name="userType"
+              value="multi"
+              currentValue={radioValue}
+              onRadioButtonChange={async () => setRadioValue("multi")}
             >
-              <ToggleButton
-                id={`userType-radio2`}
-                className="text-start"
-                type="radio"
-                name="userType"
-                value={"multi"}
-                checked={radioValue === "multi"}
-                onChange={(e) => setRadioValue("multi")}
-              >
-                <HiUserGroup
-                  size={25}
-                  color={`${radioValue === "multi" ? "#664de5" : "black"}`}
-                  className="mb-2"
-                />
-                <h6>With my team </h6>
-                <p className="fs-6 fw-lighter">
-                  Wikis, docs, tasks & projects, all in one place.
-                </p>
-              </ToggleButton>
-            </ButtonGroup>
+              <UserTypeCard
+                icon={
+                  <HiUserGroup
+                    size={25}
+                    color={`${radioValue === "multi" ? "#664de5" : "black"}`}
+                    className="mb-2"
+                  />
+                }
+                title={"With my team"}
+                details={"Wikis, docs, tasks & projects, all in one place."}
+              ></UserTypeCard>
+            </RadioButton>
             <Button className="ws-submit" onClick={onClickValidation}>
               Create Workspace
             </Button>
