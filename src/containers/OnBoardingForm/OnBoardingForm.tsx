@@ -6,13 +6,13 @@ import {
   useFormContext,
   useWatch,
 } from "react-hook-form";
-
 import {
   UserDetails,
   WorkspaceCreation,
   WorkspaceDetails,
   OnboardingCompletion,
 } from "../OnBoardingForm/Steps";
+
 function OnBoardingForm() {
   const methods = useForm();
   const data = useWatch({ control: methods.control });
@@ -22,6 +22,7 @@ function OnBoardingForm() {
   const onSubmit = (data: any) => {
     console.log({ data });
   };
+
   return (
     <div
       style={{
@@ -46,18 +47,20 @@ function OnBoardingForm() {
             <OnboardingCompletion
               styles={step === 4 ? { display: "block" } : { display: "none" }}
             />
-            {step < 4 ? (
-              <Button
-                className="ws-submit"
-                onClick={() => setStep((step) => step + 1)}
-              >
-                Create Workspace
-              </Button>
-            ) : (
-              <Button className="ws-submit" type="submit">
-                Launch Eden
-              </Button>
-            )}
+            <div>
+              {step < 4 ? (
+                <Button
+                  className="ws-submit"
+                  onClick={() => setStep((step) => step + 1)}
+                >
+                  Create Workspace
+                </Button>
+              ) : (
+                <Button className="ws-submit" type="submit">
+                  Launch Eden
+                </Button>
+              )}
+            </div>
           </form>
         </FormProvider>
       </div>

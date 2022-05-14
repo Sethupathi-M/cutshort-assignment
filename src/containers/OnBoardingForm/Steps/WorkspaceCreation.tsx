@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, FormControl, InputGroup } from "react-bootstrap";
 import { useFormContext } from "react-hook-form";
+import FormHeadings from "../../../components/FormHeadings";
 
 interface WorkspaceCreationProps {
   styles?: React.CSSProperties;
@@ -10,8 +11,11 @@ function WorkspaceCreation({ styles }: WorkspaceCreationProps) {
   const { register } = useFormContext();
   return (
     <div style={{ ...styles }}>
-      <h3>Let's set up a home for all your work</h3>
-      <p>You can always create another workspace later.</p>
+      <FormHeadings
+        subTitle="You can always create another workspace later."
+        title="Let's set up a home for all your work"
+      />
+
       <Form>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Workspace Name</Form.Label>

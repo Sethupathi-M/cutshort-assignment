@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import { useFormContext } from "react-hook-form";
+import FormHeadings from "../../../components/FormHeadings";
 
 interface UserDetailsProps {
   styles?: React.CSSProperties;
@@ -10,9 +11,11 @@ function UserDetails({ styles }: UserDetailsProps) {
 
   return (
     <div style={{ ...styles }}>
-      <h2>Welcome! First things first... </h2>
-      <p>You can always change them later.</p>
-      <Form className="form-container">
+      <FormHeadings
+        subTitle="You can always change them later."
+        title="Welcome! First things first... "
+      />
+      <Form>
         <Form.Group className="mb-3" controlId="fullName.input">
           <Form.Label>Full Name</Form.Label>
           <Form.Control

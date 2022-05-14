@@ -1,5 +1,6 @@
 import React from "react";
 import { BsCheck } from "react-icons/bs";
+import FormHeadings from "../../../components/FormHeadings";
 interface OnboardingCompletionProps {
   styles?: React.CSSProperties;
 }
@@ -28,12 +29,10 @@ function OnboardingCompletion({ styles }: OnboardingCompletionProps) {
           <BsCheck size="25" color="white"></BsCheck>
         </div>
       </div>
-      <div className="mb-4">
-        <h3>Congratulations, Eren!</h3>
-        <p className="fw-light">
-          You have completed onboarding, you can start using the Eden!
-        </p>
-      </div>
+      <FormHeadings
+        subTitle="You have completed onboarding, you can start using the Eden!"
+        title="Congratulations, Eren!"
+      />
     </div>
   );
 }
