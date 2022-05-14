@@ -6,14 +6,18 @@ body {
   font-family: "Inter";
   font-weight: 500;
 }
-
+.div-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .primary-bg {
   background-color: $primay-color !important;
 }
-
 .primary-color {
   color: $primay-color !important;
 }
+
 .ws-submit {
   font-size: small;
   background-color: $primay-color !important;
@@ -32,7 +36,7 @@ body {
 }
 .ws-user {
   .btn {
-    border-color: #664de5 !important;
+    border: 2px #757f93 solid !important;
     color: black !important;
     background-color: white !important;
     padding: 15px;
@@ -43,16 +47,14 @@ body {
   p {
     font-size: smaller;
   }
+  &.active {
+    .btn {
+      border-color: $primay-color !important;
+    }
+  }
 }
-
-.div-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .form-container {
-  width: 550px;
-  max-width: 450px;
-  min-height: 300px;
+  width: 450px;
+  max-width: 550px;
+  min-width: 300px;
 }

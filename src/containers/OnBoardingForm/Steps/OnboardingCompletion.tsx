@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import { BsCheck } from "react-icons/bs";
 import FormHeadings from "../../../components/FormHeadings";
 interface OnboardingCompletionProps {
@@ -33,6 +34,9 @@ function OnboardingCompletion({ styles }: OnboardingCompletionProps) {
         subTitle="You have completed onboarding, you can start using the Eden!"
         title="Congratulations, Eren!"
       />
+      <Button className="ws-submit" type="submit">
+        Launch Eden
+      </Button>
     </div>
   );
 }

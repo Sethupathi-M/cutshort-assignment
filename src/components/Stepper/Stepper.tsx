@@ -27,14 +27,14 @@ function Stepper({ totalSteps, currentStep, width, height }: StepperProps) {
 
       return totalPercentage;
     },
-    [currentStep]
+    []
   );
 
   const steps = useMemo(() => {
     let indents = [];
     for (var i = 0; i < totalSteps; i++) {
       indents.push(
-        <Step>
+        <Step key={`${i}-step`}>
           {({ accomplished, index }: StepProps) => (
             <div
               className={`indexedStep ${accomplished ? "accomplished" : null}`}
@@ -46,7 +46,7 @@ function Stepper({ totalSteps, currentStep, width, height }: StepperProps) {
       );
     }
     return indents;
-  }, [currentStep, totalSteps]);
+  }, [totalSteps]);
 
   return (
     <div>
