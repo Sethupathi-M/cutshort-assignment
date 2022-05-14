@@ -1,0 +1,58 @@
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+$primay-color: #664de5;
+
+body {
+  font-family: "Inter";
+  font-weight: 500;
+}
+
+.primary-bg {
+  background-color: $primay-color !important;
+}
+
+.primary-color {
+  color: $primay-color !important;
+}
+.ws-submit {
+  font-size: small;
+  background-color: $primay-color !important;
+  border-color: $primay-color !important;
+
+  width: 100%;
+  padding: 12px;
+  &:focus {
+    background-color: $primay-color !important;
+    border-color: $primay-color !important;
+    outline: none !important;
+    outline-offset: none !important;
+    outline-width: 0 !important;
+    box-shadow: none !important;
+  }
+}
+.ws-user {
+  .btn {
+    border-color: #664de5 !important;
+    color: black !important;
+    background-color: white !important;
+    padding: 15px;
+  }
+  h6 {
+    font-weight: 600;
+  }
+  p {
+    font-size: smaller;
+  }
+}
+
+.div-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 550px;
+  max-width: 450px;
+  min-height: 300px;
+}
