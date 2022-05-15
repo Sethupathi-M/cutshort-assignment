@@ -25,7 +25,7 @@ function UserDetails({ styles, goToNext }: UserDetailsProps) {
         subTitle="You can always change them later."
         title="Welcome! First things first... "
       />
-      <Form className="form-container">
+      <div className="form-container">
         <Form.Group className="mb-3" controlId="fullName.input">
           <Form.Label>Full Name</Form.Label>
           <Form.Control
@@ -53,7 +53,7 @@ function UserDetails({ styles, goToNext }: UserDetailsProps) {
             </span>
           )}
         </div>
-      </Form>
+      </div>
     </div>
   );
 }

@@ -44,7 +44,7 @@ function WorkspaceDetails({ styles, goToNext }: WorkspaceDetailsProps) {
         subTitle="We'll streamline your setup experience accordingly"
         title="How are you planning to use Eden?"
       />
-      <Form className="form-container">
+      <div className="form-container">
         <div className="div-center">
           <div className="row mb-3">
             <RadioButton
@@ -99,7 +99,7 @@ function WorkspaceDetails({ styles, goToNext }: WorkspaceDetailsProps) {
             )}
           </div>
         </div>
-      </Form>
+      </div>
     </div>
   );
 }

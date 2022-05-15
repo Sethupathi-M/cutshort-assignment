@@ -26,7 +26,7 @@ function WorkspaceCreation({ styles, goToNext }: WorkspaceCreationProps) {
         title="Let's set up a home for all your work"
       />
 
-      <Form className="form-container">
+      <div className="form-container">
         <Form.Group className="mb-3" controlId="workspaceNameControl">
           <Form.Label>Workspace Name</Form.Label>
           <Form.Control
@@ -59,7 +59,7 @@ function WorkspaceCreation({ styles, goToNext }: WorkspaceCreationProps) {
             </span>
           )}
         </div>
-      </Form>
+      </div>
     </div>
   );
 }

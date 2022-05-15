@@ -24,7 +24,7 @@ function Stepper({ totalSteps, currentStep, width, height }: StepperProps) {
           totalPercentage += perGapPercentage / 2;
         else totalPercentage = totalPercentage + perGapPercentage;
       }
-
+      if (totalPercentage > 100) return 100;
       return totalPercentage;
     },
     []
