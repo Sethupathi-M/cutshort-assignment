@@ -54,7 +54,25 @@ body {
   }
 }
 .form-container {
-  width: 450px;
-  max-width: 550px;
+  // width: 450px;
+  max-width: 450px;
   min-width: 300px;
+
+  @include media-breakpoint-between(sm, md) {
+    width: 350px;
+  }
+  @include media-breakpoint-between(md, lg) {
+    width: 400px;
+  }
+  @include media-breakpoint-between(lg, xl) {
+    width: 450px;
+  }
+}
+
+.form-control:focus,
+.btn:focus,
+.btn-check:focus,
+.btn-check:focus + .btn-primary {
+  border-color: #664de5 !important;
+  box-shadow: 0 0 0 0.1rem #664de5 !important;
 }
